@@ -50,6 +50,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            //Random Box
 //            val painter = painterResource(id = R.drawable.test)
 //            val description = "Testing"
 //            val title = "First Jetpack Compose App"
@@ -61,41 +62,48 @@ class MainActivity : ComponentActivity() {
 //                ImageCard(painter = painter, contentDescription = description, title = title)
 //            }
 
+            //Circular Progress Bar
 //            Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
 //                CircularProgressBar(percentage = 0.5f, number = 1000)
 //            }
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0xFF101010))
-            ) {
-                Row(
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .border(1.dp, Color.Green, RoundedCornerShape(10.dp))
-                        .padding(30.dp)
-                ) {
-                    var volume by remember {
-                        mutableStateOf(0f)
-                    }
-                    val barCount = 20
-                    MusicKnob(
-                        modifier = Modifier.size(100.dp)
-                    ) {
-                        volume = it
-                    }
-                    Spacer(modifier = Modifier.width(20.dp))
-                    VolumeBar(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(30.dp),
-                        activeBars = (barCount * volume).roundToInt(),
-                        barCount = barCount
-                    )
-                }
-            }
+
+            //Music Rotation Knob
+//            Box(
+//                contentAlignment = Alignment.Center,
+//                modifier = Modifier
+//                    .fillMaxSize()
+//                    .background(Color(0xFF101010))
+//            ) {
+//                Row(
+//                    horizontalArrangement = Arrangement.Center,
+//                    verticalAlignment = Alignment.CenterVertically,
+//                    modifier = Modifier
+//                        .border(1.dp, Color.Green, RoundedCornerShape(10.dp))
+//                        .padding(30.dp)
+//                ) {
+//                    var volume by remember {
+//                        mutableStateOf(0f)
+//                    }
+//                    val barCount = 20
+//                    MusicKnob(
+//                        modifier = Modifier.size(100.dp)
+//                    ) {
+//                        volume = it
+//                    }
+//                    Spacer(modifier = Modifier.width(20.dp))
+//                    VolumeBar(
+//                        modifier = Modifier
+//                            .fillMaxWidth()
+//                            .height(30.dp),
+//                        activeBars = (barCount * volume).roundToInt(),
+//                        barCount = barCount
+//                    )
+//                }
+//            }
+
+            //Expandable Card
+//            ExpandableCard(title = "My Title", description = "Aman Jain")
+
         }
     }
 }
