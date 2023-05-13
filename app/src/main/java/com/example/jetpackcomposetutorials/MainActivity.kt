@@ -104,6 +104,21 @@ class MainActivity : ComponentActivity() {
             //Expandable Card
 //            ExpandableCard(title = "My Title", description = "Aman Jain")
 
+            //Google loading button
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+
+                GoogleButton(
+                    text = "Sign up with Google",
+                    loadingText = "Creating Account...",
+                    onClicked = {
+
+                    }
+                )
+            }
         }
     }
 }
@@ -216,9 +231,9 @@ fun VolumeBar(
             constraints.maxWidth / (2f * barCount)
         }
         Canvas(modifier = modifier) {
-            for(i in 0 until barCount) {
+            for (i in 0 until barCount) {
                 drawRoundRect(
-                    color = if(i in 0..activeBars) Color.Green else Color.DarkGray,
+                    color = if (i in 0..activeBars) Color.Green else Color.DarkGray,
                     topLeft = Offset(i * barWidth * 2f + barWidth / 2f, 0f),
                     size = Size(barWidth, constraints.maxHeight.toFloat()),
                     cornerRadius = CornerRadius(0f)
