@@ -6,10 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -41,15 +38,20 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jetpackcomposetutorials.ui.theme.HomeScreen
 import com.example.jetpackcomposetutorials.ui.theme.JetpackComposeTutorialsTheme
 import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            JetpackComposeTutorialsTheme() {
+                HomeScreen()
+            }
             //Random Box
 //            val painter = painterResource(id = R.drawable.test)
 //            val description = "Testing"
@@ -105,20 +107,20 @@ class MainActivity : ComponentActivity() {
 //            ExpandableCard(title = "My Title", description = "Aman Jain")
 
             //Google loading button
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                GoogleButton(
-                    text = "Sign up with Google",
-                    loadingText = "Creating Account...",
-                    onClicked = {
-
-                    }
-                )
-            }
+//            Column(
+//                modifier = Modifier.fillMaxSize(),
+//                verticalArrangement = Arrangement.Center,
+//                horizontalAlignment = Alignment.CenterHorizontally
+//            ) {
+//
+//                GoogleButton(
+//                    text = "Sign up with Google",
+//                    loadingText = "Creating Account...",
+//                    onClicked = {
+//
+//                    }
+//                )
+//            }
         }
     }
 }
